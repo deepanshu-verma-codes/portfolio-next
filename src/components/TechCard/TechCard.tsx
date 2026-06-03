@@ -84,7 +84,7 @@ const TechChildCard: React.FC<Props> = ({ stack }) => {
             : "opacity-0 scale-90 pointer-events-none"
         }`}
       >
-        <h3 className="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">
+        <h3 className="text-xl font-semibold mb-4 text-gray-700 border-b pb-2 font-heading">
           {stack?.name}
         </h3>
         <TechList stack={stack} />
@@ -102,7 +102,7 @@ const TechList = ({ stack }: any) => {
           (tech: { name: string; icon: React.ReactNode }, idx: number) => (
             <div key={idx} className="flex items-center gap-3">
               {tech.icon}
-              <span className="text-lg text-gray-700 font-medium">
+              <span className="text-lg text-gray-700 font-medium font-body">
                 {tech.name}
               </span>
             </div>

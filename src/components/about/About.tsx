@@ -15,7 +15,7 @@ const About = () => {
       >
         <Image
           className="relative rounded-full mx-auto object-cover aspect-square z-10 ring-2 ring-offset-purple ring-offset-2 ring-blue-200"
-          src="/images/profile.jpg"
+          src="/images/profile.png"
           alt="my-picture"
           height={180}
           width={180}
@@ -26,7 +26,7 @@ const About = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="flex text-center md:tracking-wider mb-4 text-md md:text-lg lg:text-xl font-semibold"
+        className="flex text-center md:tracking-wider mb-4 text-md md:text-lg lg:text-xl font-semibold font-heading"
       >
         Hi!{" "}
         <motion.div
@@ -45,7 +45,7 @@ const About = () => {
       </motion.div>
       <BlurFadeEffectWrapper delay={0.3}>
         <FlipWords
-          className="text-center font-bold text-[40px] md:text-5xl lg:text-6xl leading-6"
+          className="text-center font-bold text-[40px] md:text-5xl lg:text-6xl leading-6 font-heading"
           words={[
             "Full Stack Lead",
             "MERN Expert",
@@ -56,17 +56,19 @@ const About = () => {
       </BlurFadeEffectWrapper>
       <div className="flex gap-1 justify-center items-center my-4 max-w-screen-md">
         <BlurFadeEffectWrapper delay={0.38}>
-          <p className="text-center md:tracking-wider  text-base md:text-md text-zinc-200">
+          <p className="text-center md:tracking-wider text-base md:text-md text-foreground/80">
             Over 5 years of experience engineering high-performance MERN stack applications.
             Passionate about architecting complex ecosystems, branding, and user experience.
-            Based in <span className="text-[#cbacf9] font-semibold">India</span>,
+            Based in <span className="text-accent font-semibold">India</span>,
             driven by a creative mindset and attention to detail.
           </p>
         </BlurFadeEffectWrapper>
       </div>
       {/* <FlipWords /> */}
-      <Light />
-      <Light left={0} />
+      <div className="dark:block hidden">
+        <Light />
+        <Light left={0} />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
-# 🚀 Malek's Developer Portfolio
+# 🚀 Deepanshu's Developer Portfolio
 
-A modern, responsive, and animated personal developer portfolio built using **Next.js**, **Tailwind CSS**, and **Framer Motion**.
+A modern, responsive, and animated personal developer portfolio built using **Next.js**, **Tailwind CSS**, **Framer Motion**, and **AI Integrations**.
 
 ![portfolio-banner](https://your-image-link.com/banner.png)
 

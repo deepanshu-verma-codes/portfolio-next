@@ -63,7 +63,7 @@ const Card = ({ project }: { project: projectType }) => {
           ))}
         </div>
 
-        <h1 className="text-lg md:text-xl font-semibold text-nowrap">
+        <h1 className="text-lg md:text-xl font-semibold text-nowrap font-heading">
           {project?.title}
         </h1>
         <p className="text-sm text-gray-300">{project?.description}</p>

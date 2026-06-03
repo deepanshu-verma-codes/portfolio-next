@@ -34,7 +34,7 @@ const Contact = () => {
       >
         <Tooltip content="Get In Touch" position="bottom">
           <motion.h1
-            className="text-[#ccd6f6] text-3xl sm:text-4xl md:text-5xl font-semibold"
+            className="text-card-foreground text-3xl sm:text-4xl md:text-5xl font-semibold font-heading"
             variants={itemVariants}
           >
             Crafting Scalable, Elegant{" "}
@@ -50,7 +50,7 @@ const Contact = () => {
 
       <Tooltip content="Reach out anytime">
         <motion.a
-          href="mailto:verma.deepanshu@gmail.com"
+          href="mailto:vermadeepanshu123@gmail.com"
           className="glow-on-hover relative px-6 py-3 text-white bg-[#111] rounded-lg z-10 inline-block text-center"
           variants={itemVariants}
           whileHover={{ scale: 1.05 }}

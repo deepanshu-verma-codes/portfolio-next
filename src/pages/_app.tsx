@@ -3,22 +3,26 @@ import Loading from "@/components/loader/Loading";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import {
-  Space_Grotesk,
-  Manrope,
-  JetBrains_Mono,
+  Outfit,
+  Plus_Jakarta_Sans,
+  Fira_Code,
 } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
-const spaceGrotesk = Space_Grotesk({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-outfit",
 });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
-const jetBrains = JetBrains_Mono({
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ["latin"], 
+  variable: "--font-plus-jakarta" 
+});
+const firaCode = Fira_Code({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-fira-code",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -31,62 +35,64 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    <main
-      className={`${spaceGrotesk.variable} ${manrope.variable} ${jetBrains.variable}`}
-    >
-      <Head>
-        <title>Deepanshu Verma | Full Stack Lead | MERN & AI Architect</title>
-        <meta
-          name="description"
-          content="Hi, I'm Deepanshu Verma – a Full Stack Lead and AI Architect skilled in MERN, OpenAI, and scalable web solutions. Check out my portfolio!"
-        />
-        <meta
-          name="keywords"
-          content="Deepanshu Verma, Portfolio, Full Stack Lead, AI Architect, MERN, React, Next.js, OpenAI"
-        />
-        <meta name="author" content="Deepanshu Verma" />
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      <main
+        className={`${outfit.variable} ${plusJakartaSans.variable} ${firaCode.variable} font-body`}
+      >
+        <Head>
+          <title>Deepanshu Verma | Full Stack Lead | MERN & AI Architect</title>
+          <meta
+            name="description"
+            content="Hi, I'm Deepanshu Verma – a Full Stack Lead and AI Architect skilled in MERN, OpenAI, and scalable web solutions. Check out my portfolio!"
+          />
+          <meta
+            name="keywords"
+            content="Deepanshu Verma, Portfolio, Full Stack Lead, AI Architect, MERN, React, Next.js, OpenAI"
+          />
+          <meta name="author" content="Deepanshu Verma" />
 
-        {/* Open Graph Meta */}
-        <meta
-          property="og:title"
-          content="Deepanshu Verma | Full Stack Lead | MERN & AI Architect"
-        />
-        <meta
-          property="og:description"
-          content="Check out my portfolio and latest web projects featuring MERN stack and AI integrations."
-        />
-        <meta
-          property="og:image"
-          content="/images/profile.jpg"
-        />
-        <meta property="og:url" content="https://www.deepanshuverma.in/" />
-        <meta property="og:type" content="website" />
+          {/* Open Graph Meta */}
+          <meta
+            property="og:title"
+            content="Deepanshu Verma | Full Stack Lead | MERN & AI Architect"
+          />
+          <meta
+            property="og:description"
+            content="Check out my portfolio and latest web projects featuring MERN stack and AI integrations."
+          />
+          <meta
+            property="og:image"
+            content="/images/profile.png"
+          />
+          <meta property="og:url" content="https://www.deepanshuverma.in/" />
+          <meta property="og:type" content="website" />
 
-        {/* Twitter Meta */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Deepanshu Verma | Full Stack Lead | MERN & AI Architect"
-        />
-        <meta
-          name="twitter:description"
-          content="Check out my portfolio and latest web projects featuring MERN stack and AI integrations."
-        />
-        <meta
-          name="twitter:image"
-          content="/images/profile.jpg"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+          {/* Twitter Meta */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Deepanshu Verma | Full Stack Lead | MERN & AI Architect"
+          />
+          <meta
+            name="twitter:description"
+            content="Check out my portfolio and latest web projects featuring MERN stack and AI integrations."
+          />
+          <meta
+            name="twitter:image"
+            content="/images/profile.jpg"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      {loading ? (
-        <Loading />
-      ) : (
-        <Layout>
-          {" "}
-          <Component {...pageProps} />{" "}
-        </Layout>
-      )}
-    </main>
+        {loading ? (
+          <Loading />
+        ) : (
+          <Layout>
+            {" "}
+            <Component {...pageProps} />{" "}
+          </Layout>
+        )}
+      </main>
+    </ThemeProvider>
   );
 }

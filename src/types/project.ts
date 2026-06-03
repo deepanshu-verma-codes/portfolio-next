@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 interface BaseType {
   name?: string;
   logo: string;
@@ -7,8 +9,7 @@ interface BaseType {
 }
 
 export interface projectType extends BaseType {
-  github_link: string;
-  stack_image: string[];
+  stack_image: { name: string; icon: IconType }[];
 }
 export interface exprienceType extends BaseType {
   date: string;
