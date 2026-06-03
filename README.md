@@ -2,8 +2,6 @@
 
 A modern, responsive, and animated personal developer portfolio built using **Next.js**, **Tailwind CSS**, **Framer Motion**, and **AI Integrations**.
 
-![portfolio-banner](https://your-image-link.com/banner.png)
-
 ---
 
 ## 📌 Features
